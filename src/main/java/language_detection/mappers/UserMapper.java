@@ -43,7 +43,4 @@ public interface UserMapper {
 //    @Select(CUSTOM_QUERY)
 //    public ArrayList<User> getUserByPrimaryLanguage(String primaryLanguage);
 //
-
-
-
 }

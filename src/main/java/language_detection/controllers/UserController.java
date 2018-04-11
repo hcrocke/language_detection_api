@@ -38,7 +38,7 @@ public class UserController {
         if (securityService.authenticateApiKey(apiKey))
             return userService.getUserById(id);
          else
-            throw new AuthenticationException("Get outta here with your false API key");
+            throw new AuthenticationException("Get outta here with your invalid API key.");
     }
 
     @PostMapping("/")

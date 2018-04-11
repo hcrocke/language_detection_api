@@ -5,7 +5,7 @@ public class User {
     String givenName;
     String surname;
     String primaryLanguage;
-    boolean isActive;
+    int isActive;
     String apiKey;
 
     public String getGivenName() {
@@ -32,11 +32,11 @@ public class User {
         this.primaryLanguage = primaryLanguage;
     }
 
-    public boolean isActive() {
+    public int isActive() {
         return isActive;
     }
 
-    public void setActive(boolean active) {
+    public void setActive(int active) {
         isActive = active;
     }
 
