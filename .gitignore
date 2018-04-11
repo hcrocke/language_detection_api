@@ -1,0 +1,6 @@
+.idea/
+language_detection_api.iml
+*.iml
+*.idea
+target/
+.DS_Store
