@@ -47,7 +47,7 @@ public class UserController {
         return userService.createUser(user);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/")
     public User updateUser(@RequestBody User user) throws GeneralException, AuthenticationException {
 
         if (securityService.authenticateApiKey(user.getApiKey()))

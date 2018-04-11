@@ -2,11 +2,20 @@ package language_detection.models;
 
 public class User {
 
+    int id;
     String givenName;
     String surname;
     String primaryLanguage;
-    int isActive;
+    boolean isActive;
     String apiKey;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getGivenName() {
         return givenName;
@@ -32,13 +41,11 @@ public class User {
         this.primaryLanguage = primaryLanguage;
     }
 
-    public int isActive() {
+    public boolean isActive() {
         return isActive;
     }
 
-    public void setActive(int active) {
-        isActive = active;
-    }
+    public void setActive(boolean isActive) { isActive = isActive; }
 
     public String getApiKey() {
         return apiKey;

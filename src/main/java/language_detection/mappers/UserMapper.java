@@ -10,10 +10,10 @@ public interface UserMapper {
 
     String GET_ALL__ACTIVE_USERS = "SELECT * FROM `language-users`.Users where isActive = 1";
     String GET_BY_ID = "SELECT * FROM `language-users`.Users where id = #{id}";
-    String INSERT_USER = "INSERT INTO `language-users`.Users (givenName, surname, primaryLanguage, isActive, apiKey) " +
-            "VALUES (#{givenName}, #{surname}, #{primaryLanguage}, #{isActive}, #{apiKey})";
+    String INSERT_USER = "INSERT INTO `language-users`.Users (givenName, surname, primaryLanguage, apiKey) " +
+            "VALUES (#{givenName}, #{surname}, #{primaryLanguage}, #{apiKey})";
     String UPDATE_USER = "UPDATE `language-users`.Users SET givenName = #{givenName}, surname = #{surname}, " +
-            "primaryLanguage = #{primaryLanguage}, isActive = #{isActive} WHERE id = #{id}";
+            "primaryLanguage = #{primaryLanguage} WHERE id = #{id}";
     String DELETE_USER = "UPDATE `language-users`.Users set isActive = 0 WHERE id = #{id}";
     String GET_BY_NAME = "SELECT * FROM `language-users`.Users where givenName = #{arg0} and surname = #{arg1}";
     String AUTHENTICATE = "SELECT isActive from `language-users` .Users WHERE apiKey = #{apiKey}";
