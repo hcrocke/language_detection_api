@@ -2,7 +2,7 @@ package language_detection.services.user;
 
 import language_detection.exceptions.GeneralException;
 import language_detection.mappers.UserMapper;
-import language_detection.models.User;
+import language_detection.models.user.User;
 import language_detection.services.security.SecurityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

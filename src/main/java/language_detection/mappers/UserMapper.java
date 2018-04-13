@@ -1,6 +1,6 @@
 package language_detection.mappers;
 
-import language_detection.models.User;
+import language_detection.models.user.User;
 import org.apache.ibatis.annotations.*;
 
 import java.util.ArrayList;

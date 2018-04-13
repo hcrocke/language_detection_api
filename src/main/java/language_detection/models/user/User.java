@@ -1,4 +1,4 @@
-package language_detection.models;
+package language_detection.models.user;
 
 public class User {
 
