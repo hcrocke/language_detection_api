@@ -52,4 +52,13 @@ public class LanguageService {
 
         return obj;
     }
+
+    public MultiLanguage insertLanguageInfo(MultiLanguage result) {
+
+        String searchTermOne = result.getSearchTermOne();
+        String searchTermTwo = result.getSearchTermTwo();
+
+        int insertReturn = languageMapper.insertLangInfo(result);
+        return languageMapper.selectRecord(searchTermOne, searchTermTwo);
+    }
 }

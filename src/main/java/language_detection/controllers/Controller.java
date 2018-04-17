@@ -59,9 +59,13 @@ public class Controller {
     @RequestMapping("/searchmultiple")
     public MultiLanguage multiLanguages(@RequestParam(value = "t1", required = true) String t1,
                                         @RequestParam(value = "t2", required = true) String t2,
-                                        @RequestParam(value = "p", required = true) boolean persist) {
+                                        @RequestParam(value = "p", required = true) boolean persist,
+                                        @RequestParam("api-key") String apiKey) throws AuthenticationException {
 
-        return languageService.multiLanguages(t1, t2, persist);
+        if (securityService.authenticateApiKey(apiKey))
+            return languageService.multiLanguages(t1, t2, persist);
+        else
+            throw new AuthenticationException("Get outta here with your invalid API key.");
     }
 
     @PostMapping("/")
@@ -75,6 +79,15 @@ public class Controller {
 
         if (securityService.authenticateApiKey(user.getApiKey()))
             return userService.updateUser(user);
+        else
+            throw new AuthenticationException("Invalid API key, ya dangus");
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/")
+    public MultiLanguage addNew(@RequestBody MultiLanguage result) throws AuthenticationException {
+
+        if (securityService.authenticateApiKey(result.getApiKey()))
+            return languageService.insertLanguageInfo(result);
         else
             throw new AuthenticationException("Invalid API key, ya dangus");
     }
