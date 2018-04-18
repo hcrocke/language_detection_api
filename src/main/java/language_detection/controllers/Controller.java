@@ -83,14 +83,14 @@ public class Controller {
             throw new AuthenticationException("Invalid API key, ya dangus");
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/")
-    public MultiLanguage addNew(@RequestBody MultiLanguage result) throws AuthenticationException {
-
-        if (securityService.authenticateApiKey(result.getApiKey()))
-            return languageService.insertLanguageInfo(result);
-        else
-            throw new AuthenticationException("Invalid API key, ya dangus");
-    }
+//    @RequestMapping(method = RequestMethod.POST, value = "/")
+//    public MultiLanguage addNew(@RequestBody MultiLanguage result) throws AuthenticationException {
+//
+//        if (securityService.authenticateApiKey(result.getApiKey()))
+//            return languageService.insertLanguageInfo(result);
+//        else
+//            throw new AuthenticationException("Invalid API key, ya dangus");
+//    }
 
     @DeleteMapping("/{id}")
     public User deleteUser(@PathVariable("id") String id, @RequestParam("api-key") String apiKey) throws GeneralException, AuthenticationException {
